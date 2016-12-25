@@ -12,8 +12,6 @@ RUN apt-get install -y curl libcurl3 libcurl3-dev
 #Install International Components for Unicode
 RUN apt-get install -y libicu-dev
 
-#RUN apt-get install -y openssl
-
 #ssl libs
 RUN apt-get install -y libc-client-dev libkrb5-dev
 

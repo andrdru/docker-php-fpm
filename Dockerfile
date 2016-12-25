@@ -22,7 +22,7 @@ RUN apt-get install -y libpng-dev
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos
 
 #gettext
-apt-get install -y gettext
+RUN apt-get install -y gettext
 
 #install docker php extention
 RUN docker-php-ext-install \

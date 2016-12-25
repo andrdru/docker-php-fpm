@@ -21,6 +21,9 @@ RUN apt-get install -y libpng-dev
 #Configure imap
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos
 
+#gettext
+apt-get install -y gettext
+
 #install docker php extention
 RUN docker-php-ext-install \
         mysqli \

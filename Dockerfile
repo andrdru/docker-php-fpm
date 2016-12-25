@@ -32,9 +32,9 @@ RUN docker-php-ext-install \
         intl \
         exif \
         pcntl \
-		gettext \
-		imap \
-		ftp \
+        gettext \
+        imap \
+        ftp \
         gd \
         json \
         curl \

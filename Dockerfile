@@ -18,6 +18,9 @@ RUN apt-get install -y libc-client-dev libkrb5-dev
 #lib for gd
 RUN apt-get install -y libpng-dev
 
+#mail() support
+RUN apt-get install -y ssmtp
+
 #Configure imap
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos
 

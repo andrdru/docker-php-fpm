@@ -22,7 +22,7 @@ RUN apt-get install -y libc-client-dev libkrb5-dev
 RUN apt-get install -y libpng-dev
 
 #mail support
-#RUN apt-get install -y exim4
+RUN apt-get install -y exim4
 
 #Configure imap
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos

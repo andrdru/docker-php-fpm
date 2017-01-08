@@ -2,6 +2,9 @@ FROM php:fpm
 
 RUN apt-get update
 
+# Install Git
+RUN apt-get install -y git
+
 # Install Postgre PDO
 RUN apt-get install -y libpq-dev
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
@@ -18,8 +21,8 @@ RUN apt-get install -y libc-client-dev libkrb5-dev
 #lib for gd
 RUN apt-get install -y libpng-dev
 
-#mail() support
-RUN apt-get install -y ssmtp
+#mail support
+#RUN apt-get install -y exim4
 
 #Configure imap
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos

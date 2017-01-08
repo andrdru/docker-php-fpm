@@ -48,5 +48,9 @@ RUN docker-php-ext-install \
         iconv \
         mbstring
 
+
+#add sendmail to php
+RUN echo "sendmail_path=sendmail -i -t" >> /usr/local/etc/php/conf.d/php-sendmail.ini
+
 #cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

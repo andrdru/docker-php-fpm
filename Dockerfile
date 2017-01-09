@@ -54,7 +54,3 @@ RUN echo "sendmail_path=sendmail -i -t" >> /usr/local/etc/php/conf.d/php-sendmai
 
 #cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-COPY docker-php-entrypoint /usr/local/bin/
-
-ENTRYPOINT ["docker-php-entrypoint"]

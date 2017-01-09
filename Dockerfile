@@ -58,4 +58,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #new entrypoint
 COPY entrypoint.sh /usr/local/bin/
 
+CMD chmod 777 /usr/local/bin/entrypoint.sh
+
 ENTRYPOINT ["entrypoint.sh"]

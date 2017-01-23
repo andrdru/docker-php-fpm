@@ -19,13 +19,26 @@ RUN apt-get install -y libicu-dev
 RUN apt-get install -y libc-client-dev libkrb5-dev
 
 #lib for gd
-RUN apt-get install -y libjpeg-dev libpng-dev
+RUN apt-get install -y  libjpeg-dev \
+                        libpng-dev \
+                        libfreetype6-dev \
+                        libjpeg62-turbo-dev \
+                        libpng12-dev \
+                        libxpm-dev \
+                        libvpx-dev
 
 #mail support
 RUN apt-get install -y exim4
 
 #Configure imap
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos
+
+# Configure GD package for JPEG support
+RUN docker-php-ext-configure gd \
+		--with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
+		--with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
+		--with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
+		--with-vpx-dir=/usr/lib/x86_64-linux-gnu/
 
 #gettext
 RUN apt-get install -y gettext locales locales-all

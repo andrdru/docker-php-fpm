@@ -19,7 +19,7 @@ RUN apt-get install -y libicu-dev
 RUN apt-get install -y libc-client-dev libkrb5-dev
 
 #lib for gd
-RUN apt-get install -y libpng-dev
+RUN apt-get install -y php5-gd libpng-dev
 
 #mail support
 RUN apt-get install -y exim4

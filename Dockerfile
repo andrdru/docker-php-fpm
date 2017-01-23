@@ -19,7 +19,7 @@ RUN apt-get install -y libicu-dev
 RUN apt-get install -y libc-client-dev libkrb5-dev
 
 #lib for gd
-RUN apt-get install -y php7.1-gd libpng-dev
+RUN apt-get install -y libjpeg-dev libpng-dev
 
 #mail support
 RUN apt-get install -y exim4
@@ -28,7 +28,7 @@ RUN apt-get install -y exim4
 RUN docker-php-ext-configure imap --with-imap-ssl --with-kerberos
 
 #gettext
-RUN apt-get install -y php7.1-intl gettext locales locales-all
+RUN apt-get install -y gettext locales locales-all
 
 #install docker php extention
 RUN docker-php-ext-install \

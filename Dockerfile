@@ -74,18 +74,7 @@ RUN apt-get install -y zlib1g-dev \
         && docker-php-ext-install zip
 
 # Install Xdebug
-RUN curl -fsSL 'https://xdebug.org/files/xdebug-latest.tgz' -o xdebug.tar.gz \
-    && mkdir -p xdebug \
-    && tar -xf xdebug.tar.gz -C xdebug --strip-components=1 \
-    && rm xdebug.tar.gz \
-    && ( \
-    cd xdebug \
-    && phpize \
-    && ./configure --enable-xdebug \
-    && make -j$(nproc) \
-    && make install \
-    ) \
-    && rm -r xdebug \
+RUN apt-get install -y php-xdebug \
     && docker-php-ext-enable xdebug
 
 #cleanup

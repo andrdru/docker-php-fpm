@@ -65,6 +65,14 @@ RUN docker-php-ext-install \
 #add sendmail to php
 RUN echo "sendmail_path=sendmail -i -t" >> /usr/local/etc/php/conf.d/php-sendmail.ini
 
+#add mcrypt
+RUN apt-get install -y libmcrypt-dev &&\
+docker-php-ext-install mcrypt
+
+#add zip
+RUN apt-get install -y zlib1g-dev \
+        && docker-php-ext-install zip
+
 #cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

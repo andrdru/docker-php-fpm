@@ -59,7 +59,8 @@ RUN docker-php-ext-install \
         json \
         curl \
         iconv \
-        mbstring
+        mbstring \
+        calendar
 
 
 #add sendmail to php
